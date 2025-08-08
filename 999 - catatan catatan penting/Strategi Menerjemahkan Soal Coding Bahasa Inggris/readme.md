@@ -40,6 +40,7 @@ Eksekusi Kode:
 
 "Mencari yang tertinggi" -> .idxmax() atau .sort_values()
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 #### 1. Hitung rata-rata (ini sudah sempurna)
 high_average = df.groupby('gender')['age'].mean()
