@@ -39,3 +39,16 @@ Eksekusi Kode:
 "Menghitung rata-rata umur" -> ['age'].mean()
 
 "Mencari yang tertinggi" -> .idxmax() atau .sort_values()
+
+
+#### 1. Hitung rata-rata (ini sudah sempurna)
+high_average = df.groupby('gender')['age'].mean()
+
+#### 2. Langsung cari TAHU SIAPA (indeks) yang punya nilai tertinggi
+top_gender = high_average.idxmax()
+
+#### 3. Tampilkan hasilnya
+print("Rata-rata umur per gender:")
+print(high_average) # Menampilkan tabel rata-rata aslinya
+
+print("\nGender dengan rata-rata umur tertinggi adalah:", top_gender)
