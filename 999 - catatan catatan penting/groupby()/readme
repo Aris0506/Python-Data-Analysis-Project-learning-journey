@@ -1,0 +1,66 @@
+
+### Tujuan Utama:
+.groupby() digunakan untuk mengelompokkan baris data berdasarkan sebuah kategori, lalu melakukan perhitungan statistik pada setiap kelompok.
+
+### Analogi: Manajer Toko 🏪
+Anggap .groupby() adalah seorang manajer toko yang cerdas. Tugasnya adalah mengelompokkan barang-barang, lalu membuat laporan tentang setiap kelompok.
+
+### Langkah 1: Mengelompokkan Barang
+Perintah: df.groupby('nama_kolom_kategori')
+
+Analogi Manajer: "Tolong pisahkan semua barang berdasarkan kategorinya. Semua sabun kumpul di sini, semua sampo di sana."
+
+
+### Langkah 2: Melakukan Perhitungan per Kelompok (Agregasi)
+Setelah dikelompokkan, manajer bisa melakukan berbagai perhitungan. Ini adalah "perintah" paling umum:
+
+.mean(): Menghitung nilai rata-rata.
+
+Perintah Manajer: "Berapa harga jual rata-rata untuk setiap kategori?"
+
+.sum(): Menghitung total penjumlahan.
+
+Perintah Manajer: "Berapa total stok yang kita punya untuk setiap kategori?"
+
+.count(): Menghitung jumlah item (baris).
+
+Perintah Manajer: "Ada berapa jenis produk berbeda di setiap kategori?"
+
+.max() / .min(): Menghitung nilai tertinggi / terendah.
+
+Perintah Manajer: "Berapa harga termahal dan termurah di setiap kategori?"
+
+.agg(): Perintah "super" untuk melakukan beberapa perhitungan sekaligus.
+
+Perintah Manajer: "Beri saya laporan lengkap: total stok, harga rata-rata, dan harga termahal untuk setiap kategori."
+
+
+### Contoh Kode Lengkap:
+
+import pandas as pd
+
+# Data penjualan di toko
+data = {'Kategori': ['Buah', 'Sayur', 'Buah', 'Sayur', 'Buah'],
+        'Harga': [10, 5, 8, 6, 7],
+        'Stok': [100, 150, 120, 180, 80]}
+df = pd.DataFrame(data)
+
+# --- Menggunakan .agg() untuk laporan lengkap ---
+# Mengelompokkan berdasarkan 'Kategori'
+laporan_lengkap = df.groupby('Kategori').agg(
+    Total_Stok=('Stok', 'sum'),
+    Harga_Rata_Rata=('Harga', 'mean'),
+    Harga_Termahal=('Harga', 'max')
+)
+
+# Selalu ingat untuk merapikan indeks agar siap di-plotting!
+laporan_lengkap = laporan_lengkap.reset_index()
+
+print(laporan_lengkap)
+
+
+### Hasil Output:
+
+ Kategori  Total_Stok  Harga_Rata_Rata  Harga_Termahal
+0     Buah         300             8.33              10
+1    Sayur         330             5.50               6
