@@ -1,1 +1,0 @@
-### Hari ini saya belajar 2 konsep sekaligus yaitu filtering yang sekaligus mmembuat kolom barunya dan agregasi yang juga sama-sama membuatkan kolom baru sekaligus lalu didalam agregasi kita juga menggunakan fungsi groupby() untuk mengumpulkan/atau mengelompokan kolom decade lalu menghitung rata-rata nya menggunakan fungsi .mean()
