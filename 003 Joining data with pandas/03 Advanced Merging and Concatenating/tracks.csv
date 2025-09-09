@@ -1,0 +1,11 @@
+track_id,name,album_id,genre_id
+101,Bohemian Rhapsody,1,1
+102,Stairway to Heaven,2,1
+103,Take Five,3,2
+104,Enter Sandman,4,3
+105,Billie Jean,5,4
+106,Für Elise,6,5
+107,Another One Bites the Dust,1,1
+108,Unforgiven,4,3
+109,Moonlight Sonata,6,5
+110,Smooth Criminal,5,4
