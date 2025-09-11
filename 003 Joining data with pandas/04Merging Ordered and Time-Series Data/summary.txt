@@ -1,0 +1,80 @@
+📘 Catatan Pembelajaran: Menggabungkan Data Terurut dan Time-Series dengan Pandas
+
+Materi ini membahas teknik lanjutan untuk menggabungkan dan membentuk ulang dataset di Pandas, terutama pada data berurutan atau berbasis waktu (time-series).
+
+1. 🔗 merge_ordered()
+
+Fungsi ini digunakan untuk menggabungkan dua DataFrame berdasarkan kolom kunci dengan mempertahankan urutan.
+
+✨ Fitur Utama:
+- Menggabungkan seperti .merge(), tetapi secara default menggunakan outer join.
+- Hasil diurutkan berdasarkan kolom kunci.
+- Dapat mengisi nilai yang hilang (NaN) secara otomatis.
+
+🔁 Forward Fill (fill_method='ffill')
+- Mengisi nilai NaN dengan nilai valid terakhir.
+- Sangat berguna pada data time-series, agar nilai terakhir dibawa ke titik waktu selanjutnya.
+
+✅ Kapan Digunakan:
+Ideal untuk:
+- Data saham
+- Data finansial
+- Dataset dengan urutan waktu dan kemungkinan nilai hilang
+
+
+2. 🔗 merge_asof()
+
+Fungsi ini mirip merge_ordered(), tetapi tidak memerlukan kecocokan kunci yang persis.
+
+✨ Fitur Utama:
+
+
+- Menggabungkan berdasarkan kunci terdekat (nearest key).
+- Seperti left join tapi dengan fleksibilitas waktu.
+- Kolom kunci harus diurutkan terlebih dahulu.
+
+🎯 Parameter direction:
+- 'backward' (default): mencari nilai kunci yang ≤ kunci pada DataFrame kiri.
+- 'forward': mencari nilai kunci yang ≥ kunci pada DataFrame kiri.
+
+✅ Kapan Digunakan:
+
+- Data transaksi dengan stempel waktu tidak identik.
+- Saat membuat dataset pelatihan untuk machine learning tanpa bocoran data dari masa depan (no data leakage).
+
+3. 🔍 Memfilter Data dengan .query()
+
+Metode yang intuitif dan ringkas untuk memfilter baris berdasarkan kondisi.
+
+✨ Fitur Utama:
+
+- Menerima string kondisi seperti dalam SQL (WHERE clause).
+- Mendukung:
+    - Kondisi tunggal: 'nike >= 90'
+    - Kondisi ganda: and, or
+- Bisa memfilter berdasarkan nilai numerik maupun teks.
+
+4. 🔄 Mengubah Bentuk Data dengan .melt()
+
+Digunakan untuk mengubah format DataFrame dari "lebar" (wide) ke "panjang" (long).
+
+✨ Fitur Utama:
+
+- Unpivoting: Mengubah kolom menjadi baris.
+- Parameter penting:
+    - id_vars: Kolom yang dipertahankan sebagai pengidentifikasi.
+    - value_vars: Kolom yang akan diubah menjadi baris (jika tidak disebutkan, semua kolom selain id_vars akan digunakan).
+    - var_name: Nama kolom baru untuk nama-nama dari value_vars.
+    - value_name: Nama kolom baru untuk nilainya.
+
+
+inti pemahaman dalam bentuk tabel kolom yang ringkas dan mudah dibaca:
+
+| **Fungsi / Metode** | **Fungsi Utama**                                     | **Kapan Digunakan**                              | **Keunggulan**                                       |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------- |
+| `merge_ordered()`   | Menggabungkan data berurutan dengan outer join       | Data time-series dengan data hilang (NaN)        | Otomatis isi NaN dengan forward fill, hasil terurut  |
+| `merge_asof()`      | Menggabungkan berdasarkan kunci waktu terdekat       | Data time-series dengan waktu tidak persis sama  | Mencegah data leakage, fleksibel pada waktu terdekat |
+| `.query()`          | Memfilter baris DataFrame menggunakan string kondisi | Filter data dengan kondisi kompleks              | Sintaks mirip SQL, mudah dan intuitif                |
+| `.melt()`           | Mengubah data dari format lebar ke panjang           | Transformasi data untuk analisis dan visualisasi | Mengubah kolom menjadi baris, format long            |
+
+
