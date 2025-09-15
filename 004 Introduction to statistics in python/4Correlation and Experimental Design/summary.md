@@ -18,6 +18,28 @@ Batasan Korelasi (Caveats): File kedua (2Correlation_caveats.ipynb) menyoroti ke
     Korelasi Bukan Sebab-Akibat: Ditekankan bahwa korelasi tinggi tidak berarti satu variabel menyebabkan perubahan pada variabel lain. Contohnya pada grams_sugar_per_day dan happiness_score, meskipun mungkin ada korelasi, bukan berarti konsumsi gula secara langsung menyebabkan kebahagiaan. Bisa jadi ada faktor lain yang memengaruhi keduanya.
 
 
+Desain Eksperimen
+bertujuan untuk menentukan hubungan sebab-akibat antara 
+
+perlakuan (treatment) dan respons (response).
+
+Eksperimen Terkontrol: Peneliti membagi partisipan menjadi kelompok perlakuan (yang menerima intervensi) dan kelompok kontrol (yang tidak). Kunci utamanya adalah membuat kedua kelompok sebanding untuk menghindari bias.
+
+Standar Emas Eksperimen:
+    - Randomized Controlled Trial (RCT): Partisipan ditempatkan secara acak ke dalam kelompok untuk memastikan perbandingan yang adil.
+    - Plasebo: Kelompok kontrol menerima "perlakuan palsu" (seperti pil gula) agar mereka tidak tahu berada di kelompok mana. Ini untuk memastikan efek yang muncul benar-benar dari perlakuan, bukan sugesti.
+    - Double-Blind Trial: Baik partisipan maupun peneliti tidak tahu siapa yang menerima perlakuan asli atau plasebo. Ini mencegah bias dalam penilaian hasil
+
+Studi Observasional: Peneliti hanya mengamati tanpa memberikan perlakuan. Partisipan mengelompokkan diri mereka sendiri (misalnya, perokok dan non-perokok). Studi ini hanya bisa menunjukkan
+
+asosiasi, bukan sebab-akibat, karena rentan terhadap variabel perancu.
+
+
+
+
+
+
+
 - Implementasi di Kehidupan Nyata
 Analisis korelasi sangat umum digunakan dalam berbagai bidang untuk pengambilan keputusan berdasarkan data.
 
