@@ -1,4 +1,4 @@
-Ringkasan Teknis
+## Ringkasan Teknis
 Kedua file tersebut mendemonstrasikan cara mengukur dan memvisualisasikan hubungan antara berbagai variabel dalam dataset "world_happiness" menggunakan Python.
 
 Visualisasi Hubungan: Kode tersebut menggunakan scatterplot dari library seaborn untuk membuat diagram tebar. Diagram ini adalah cara visual untuk melihat pola hubungan antara dua variabel. Misalnya, antara "skor kebahagiaan" (happiness_score) dan "harapan hidup" (life_exp).
@@ -18,7 +18,7 @@ Batasan Korelasi (Caveats): File kedua (2Correlation_caveats.ipynb) menyoroti ke
     Korelasi Bukan Sebab-Akibat: Ditekankan bahwa korelasi tinggi tidak berarti satu variabel menyebabkan perubahan pada variabel lain. Contohnya pada grams_sugar_per_day dan happiness_score, meskipun mungkin ada korelasi, bukan berarti konsumsi gula secara langsung menyebabkan kebahagiaan. Bisa jadi ada faktor lain yang memengaruhi keduanya.
 
 
-Desain Eksperimen
+## Desain Eksperimen
 bertujuan untuk menentukan hubungan sebab-akibat antara 
 
 perlakuan (treatment) dan respons (response).
@@ -38,9 +38,7 @@ asosiasi, bukan sebab-akibat, karena rentan terhadap variabel perancu.
 
 
 
-
-
-- Implementasi di Kehidupan Nyata
+## Implementasi di Kehidupan Nyata
 Analisis korelasi sangat umum digunakan dalam berbagai bidang untuk pengambilan keputusan berdasarkan data.
 
     Bisnis dan Pemasaran: 📈 Sebuah perusahaan e-commerce dapat menganalisis korelasi antara jumlah uang yang dihabiskan untuk iklan di media sosial dengan jumlah penjualan produk. Jika ditemukan korelasi positif yang kuat, mereka dapat memutuskan untuk meningkatkan anggaran iklan untuk menaikkan penjualan.
@@ -50,3 +48,5 @@ Analisis korelasi sangat umum digunakan dalam berbagai bidang untuk pengambilan 
     Keuangan dan Investasi: 💰 Seorang analis keuangan dapat menguji korelasi antara harga saham sebuah perusahaan teknologi dengan harga indeks saham teknologi secara keseluruhan (misalnya, Nasdaq). Korelasi yang sangat tinggi menunjukkan bahwa harga saham perusahaan tersebut cenderung bergerak mengikuti tren pasar secara umum.
 
     Operasional Pabrik: 🏭 Manajer pabrik dapat menganalisis korelasi antara suhu mesin produksi dengan jumlah produk cacat yang dihasilkan. Jika ada korelasi positif, mereka tahu bahwa menjaga suhu mesin tetap rendah adalah kunci untuk mengurangi produk gagal.
+
+## materi pembelajaran ini disertai mini project correlation 
