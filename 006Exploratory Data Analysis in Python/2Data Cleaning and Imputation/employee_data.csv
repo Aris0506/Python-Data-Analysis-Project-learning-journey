@@ -1,0 +1,11 @@
+Employee_ID,Department,Years_At_Company,Satisfaction_Score,Last_Salary_USD
+101,Sales,5,4.5,"85,000"
+102,Engineering,3,3.8,"92,000"
+103,Marketing,7,,
+104,Sales,15,2.1,"150,000"
+105,Engineering,,4.2,"98,000"
+106,Sales,4,4.8,"82,000"
+107,HR,9,3.5,"75,000"
+108,Engineering,25,4.9,"250,000"
+109,Marketing,6,3.9,""
+110,Engineering,4,,"95,000"
