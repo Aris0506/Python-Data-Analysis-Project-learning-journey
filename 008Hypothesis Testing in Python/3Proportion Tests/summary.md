@@ -1,24 +1,87 @@
-Dokumen tersebut pada dasarnya adalah panduan untuk melakukan pengujian statistik (uji hipotesis) guna membandingkan proporsi atau persentase dalam data menggunakan Python.
+📘 **RINGKASAN BAB: UJI PROPORSI & CHI-SQUARE**
 
-Secara sederhana, ini mengajarkan cara untuk membuktikan secara matematis apakah perbedaan yang Anda lihat dalam data itu nyata dan signifikan, atau hanya kebetulan semata.
+---
 
+### 🧮 1. **Uji Proporsi 1 Sampel**
 
+**Tujuan:** Menguji apakah proporsi populasi sama dengan nilai tertentu.
+**Contoh:** Apakah benar 40% pengguna aplikasi berusia *di bawah 25 tahun*?
 
-Poin-Poin Kuncinya:
+**Langkah-langkah:**
 
-    Satu Sampel: Membandingkan persentase dari satu grup dengan target yang sudah ada (misal: "Apakah 50% pengguna kami berusia di bawah 30?").
+1. Rumuskan hipotesis:
 
-    Dua Sampel: Membandingkan persentase antara dua grup (misal: "Apakah pengguna di bawah 30 lebih sering menjadi hobbyist dibandingkan yang di atas 30?"). Ini adalah dasar dari A/B Testing.
+   * H₀: p = p₀
+   * H₁: p ≠ p₀
+2. Hitung proporsi sampel:
+   p̂ = (jumlah kategori yang diuji) / n
+3. Hitung z-score:
+   z = (p̂ − p₀) / √[p₀(1 − p₀)/n]
+4. Hitung p-value dari z.
+5. Bandingkan dengan α (misal 0.05).
 
-    Chi-Square: Versi lebih lanjut untuk menguji hubungan antara dua variabel kategori (misal: "Apakah ada hubungan antara kepuasan kerja dan kelompok usia?")
+**Keputusan:**
 
+* Jika p < α → **Tolak H₀** (ada perbedaan signifikan).
+* Jika p > α → **Gagal menolak H₀** (tidak ada bukti kuat perbedaan).
 
-Jadi, di Dunia Nyata Ini Dipakai Untuk Apa?
+---
 
-Ini adalah kerangka kerja standar untuk membuat keputusan berdasarkan data. Metode-metode ini bukanlah "template" kode yang tinggal disalin, melainkan "template" berpikir yang akan selalu digunakan dalam proyek analisis data untuk menjawab pertanyaan bisnis seperti:
+### ⚖️ 2. **Uji Proporsi 2 Sampel**
 
-"Apakah desain website baru kita lebih efektif daripada yang lama?"
+**Tujuan:** Membandingkan dua proporsi dari dua kelompok.
+**Contoh:** Apakah proporsi pembeli *di bawah 25 tahun* sama dengan *di atas 25 tahun*?
 
-"Apakah kampanye marketing A menghasilkan lebih banyak penjualan daripada kampanye B?"
+**Langkah-langkah:**
 
-"Apakah pelanggan dari kota A memiliki perilaku yang berbeda dengan pelanggan dari kota B?"
+1. H₀: p₁ = p₂
+   H₁: p₁ ≠ p₂
+2. Hitung p̂₁ dan p̂₂ dari masing-masing kelompok.
+3. Hitung pooled proportion:
+   p̂ = (x₁ + x₂) / (n₁ + n₂)
+4. Hitung standard error:
+   SE = √[p̂(1 − p̂)(1/n₁ + 1/n₂)]
+5. Hitung z-score dan p-value seperti sebelumnya.
+
+**Interpretasi:**
+
+* p < α → Ada perbedaan proporsi antar kelompok.
+* p > α → Tidak ada bukti cukup perbedaan proporsi.
+
+---
+
+### 🧩 3. **Uji Chi-Square (Independensi)**
+
+**Tujuan:** Menguji apakah dua variabel kategorikal saling berhubungan.
+**Contoh:** Apakah *kategori usia* berhubungan dengan *tingkat kepuasan*?
+
+**Langkah-langkah:**
+
+1. Buat tabel silang (crosstab).
+2. Rumuskan hipotesis:
+
+   * H₀: Tidak ada hubungan (independen).
+   * H₁: Ada hubungan (dependen).
+3. Lakukan uji Chi-Square:
+   χ² = Σ (O − E)² / E
+
+   * O = frekuensi observasi
+   * E = frekuensi harapan (expected)
+4. Hitung p-value dari distribusi χ².
+
+**Keputusan:**
+
+* p < α → Ada hubungan signifikan antar variabel.
+* p > α → Gagal menolak H₀ (belum ada cukup bukti adanya hubungan).
+
+---
+
+### 💡 Catatan Penting
+
+* **Z-test / t-test** → untuk **data numerik (mean)**.
+* **Chi-Square** → untuk **data kategorikal (frekuensi)**.
+* Kalimat aman dalam kesimpulan:
+
+  > “Belum ada cukup bukti yang kuat untuk menolak H₀.”
+
+---
